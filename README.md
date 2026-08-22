@@ -8,5 +8,30 @@ See [docs/PROJECT_PLAN.md](docs/PROJECT_PLAN.md) for the product and technical p
 
 ## Current status
 
-Planning. The next step is the first playable vertical slice.
+The first playable vertical slice lives in `game/`:
 
+- Gia can activate and repeat bubble power.
+- The game remembers those actions locally.
+- **My story** retells the choices and repetitions, with temporary device narration.
+- A press-and-hold grown-up panel shows the app version and update status.
+- The production build installs as an offline PWA.
+- GitHub Actions verify and deploy the static site to GitHub Pages.
+
+## Local development
+
+```sh
+cd game
+npm install
+npm run dev
+```
+
+Run verification with `npm run typecheck`, `npm test`, `npm run build`, and
+`npm run test:e2e`.
+
+## Voice configuration
+
+Copy values into the already-gitignored `game/.env.local` as voices are chosen.
+The safe variable names are documented in `game/.env.example`.
+
+API keys are reserved for local, ahead-of-release asset generation. They must
+never use a `VITE_` prefix or be called from the tablet-facing game.
