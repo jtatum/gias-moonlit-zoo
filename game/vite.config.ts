@@ -12,7 +12,7 @@ const publicOrigin = (process.env.PUBLIC_ORIGIN ?? 'http://127.0.0.1:5173').repl
 export default defineConfig({
   base,
   define: {
-    __APP_VERSION__: JSON.stringify(`0.1.0+${buildId}`),
+    __APP_VERSION__: JSON.stringify(`0.2.0+${buildId}`),
   },
   plugins: [
     {

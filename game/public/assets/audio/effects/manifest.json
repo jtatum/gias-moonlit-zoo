@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "modelId": "eleven_text_to_sound_v2",
+  "effects": {
+    "magic.bubble-shimmer": {
+      "src": "assets/audio/effects/bubble-power-shimmer.mp3",
+      "prompt": "Gentle magical underwater bubble-power activation: several soft round bubbles rising, a warm crystalline shimmer, and one tiny joyful sparkle at the end. Reassuring and playful for a young child's cozy animal game. No music, no melody, no voices, no loud pop, no sudden transient."
+    },
+    "luma.wakeup-sparkle": {
+      "src": "assets/audio/effects/luma-wakeup-sparkle.mp3",
+      "prompt": "A friendly bioluminescent moon jellyfish wakes up underwater: soft glassy twinkles, a delicate watery wobble, and a quiet delighted sparkle. Gentle, magical, and safe for a young child's game. No music, no voices, no loud impact, no scary or eerie sound."
+    }
+  }
+}

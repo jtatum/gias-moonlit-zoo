@@ -43,7 +43,7 @@ export function GrownUpPanel({
           </div>
           <div>
             <dt>Adventure</dt>
-            <dd>Moonlight Aquarium · preview 1</dd>
+            <dd>Moonlight Aquarium · preview 2</dd>
           </div>
           <div>
             <dt>Update status</dt>

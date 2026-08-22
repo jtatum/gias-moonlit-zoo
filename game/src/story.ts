@@ -1,9 +1,15 @@
 export type Power = 'bubbles';
+export type Bell = 'blue_bell' | 'gold_bell' | 'coral_bell';
+export type Character = 'luma';
 
 export type GameEvent = {
-  kind: 'power_chosen' | 'power_repeated';
+  kind:
+    | 'power_chosen'
+    | 'power_repeated'
+    | 'jellyfish_met'
+    | 'jellyfish_bell_played';
   actor: 'gia';
-  subject: Power;
+  subject: Power | Bell | Character;
   scene: 'moonlight_aquarium';
   sequence: number;
 };
@@ -30,34 +36,75 @@ export function addBubbleEvent(events: GameEvent[]): GameEvent[] {
   ];
 }
 
+export function addBellEvent(events: GameEvent[], bell: Bell): GameEvent[] {
+  return [
+    ...events,
+    {
+      kind: 'jellyfish_bell_played',
+      actor: 'gia',
+      subject: bell,
+      scene: 'moonlight_aquarium',
+      sequence: events.length + 1,
+    },
+  ];
+}
+
+export function addMeetLumaEvent(events: GameEvent[]): GameEvent[] {
+  if (events.some((event) => event.kind === 'jellyfish_met')) return events;
+
+  return [
+    ...events,
+    {
+      kind: 'jellyfish_met',
+      actor: 'gia',
+      subject: 'luma',
+      scene: 'moonlight_aquarium',
+      sequence: events.length + 1,
+    },
+  ];
+}
+
 export function buildStory(events: GameEvent[]): Story {
   const bubbleEvents = events.filter((event) => event.subject === 'bubbles');
+  const bellEvents = events.filter(
+    (event) => event.kind === 'jellyfish_bell_played',
+  );
+  const metLuma = events.some((event) => event.kind === 'jellyfish_met');
   const repeatCount = Math.max(0, bubbleEvents.length - 1);
 
   if (bubbleEvents.length === 0) {
     return {
       title: 'The Aquarium Is Waiting',
       paragraphs: [
-        'Gia arrived at the Moonlight Aquarium, where a brave little kitty was waiting for her help.',
+        'Gia arrived at the Moonlight Aquarium with her best friend Penguin tucked safely under her arm. A brave little kitty was waiting for their help.',
       ],
     };
   }
 
   const repetitionLine =
     repeatCount === 0
-      ? 'One enormous moon bubble floated all the way to the twinkling water.'
+      ? 'Gia and Penguin watched one enormous moon bubble float all the way to the twinkling water.'
       : repeatCount === 1
-        ? 'Gia tried her bubble power again, and two enormous moon bubbles floated up together.'
-        : `Gia used her bubble power again and again. ${bubbleEvents.length} enormous moon bubbles danced toward the twinkling water.`;
+        ? 'Gia tried her bubble power again while Penguin bobbed beside her, and two enormous moon bubbles floated up together.'
+        : `Gia used her bubble power again and again while Penguin bobbed happily beside her. ${bubbleEvents.length} enormous moon bubbles danced toward the twinkling water.`;
+
+  const bellLine = !metLuma
+    ? null
+    : bellEvents.length === 0
+      ? 'Then Gia and Penguin met Luma the moon jellyfish, who invited them to play his glowing bells.'
+      : bellEvents.length === 1
+        ? "Then Gia and Penguin met Luma the moon jellyfish. Gia rang one of his glowing bells, and Penguin listened closely."
+        : `Then Gia and Penguin met Luma the moon jellyfish. Gia played ${bellEvents.length} glowing notes while Penguin danced under the bubbles.`;
 
   return {
-    title: "Gia's Bubble-Power Adventure",
+    title: "Gia and Penguin's Bubble-Power Adventure",
     paragraphs: [
-      'One moonlit night, Gia heard a tiny splash at the aquarium door. Nova Kitty needed a superhero.',
-      'Gia chose bubble power. A bright blue bubble spun around her hands, and the sleepy aquarium began to shimmer.',
+      'One moonlit night, Gia arrived at the aquarium with Penguin tucked safely under her arm. They heard a tiny splash at the door. Nova Kitty needed two superheroes.',
+      'Gia chose bubble power. Penguin held on tight as a bright blue bubble spun around them, and the sleepy aquarium began to shimmer.',
       repetitionLine,
-      'Nova Kitty purred. “The animals knew you would find a wonderfully bubbly way to help.”',
-    ],
+      bellLine,
+      'Nova Kitty purred. “The animals knew you and Penguin would find a wonderfully bubbly way to help.”',
+    ].filter((paragraph): paragraph is string => paragraph !== null),
   };
 }
 

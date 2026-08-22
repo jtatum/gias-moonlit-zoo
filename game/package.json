@@ -1,6 +1,6 @@
 {
   "name": "gia-moonlight-zoo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -12,7 +12,9 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "voice:generate": "node --env-file=.env.local scripts/generate-voice-assets.mjs",
+    "sfx:generate": "node --env-file=.env.local scripts/generate-sound-effects.mjs"
   },
   "dependencies": {
     "react": "19.2.6",

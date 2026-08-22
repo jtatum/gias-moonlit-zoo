@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "modelId": "eleven_multilingual_v2",
+  "outputFormat": "mp3_44100_128",
+  "clips": [
+    {
+      "id": "nova.power-invite",
+      "speaker": "nova",
+      "voiceEnv": "ELEVENLABS_HERO_KITTY_VOICE_ID",
+      "file": "nova-power-invite.mp3",
+      "text": "Gia, the aquarium needs two superheroes. Will you and Penguin choose bubble power?",
+      "voiceSettings": { "stability": 0.42, "similarity_boost": 0.78, "style": 0.42, "speed": 1.02, "use_speaker_boost": true }
+    },
+    {
+      "id": "nova.power-first",
+      "speaker": "nova",
+      "voiceEnv": "ELEVENLABS_HERO_KITTY_VOICE_ID",
+      "file": "nova-power-first.mp3",
+      "text": "Bubble power activated! You and Penguin are making the aquarium shimmer.",
+      "voiceSettings": { "stability": 0.4, "similarity_boost": 0.78, "style": 0.48, "speed": 1.03, "use_speaker_boost": true }
+    },
+    {
+      "id": "nova.power-repeat",
+      "speaker": "nova",
+      "voiceEnv": "ELEVENLABS_HERO_KITTY_VOICE_ID",
+      "file": "nova-power-repeat.mp3",
+      "text": "More moon bubbles! Pop, pop, pop!",
+      "voiceSettings": { "stability": 0.38, "similarity_boost": 0.78, "style": 0.52, "speed": 1.04, "use_speaker_boost": true }
+    },
+    {
+      "id": "luma.hello",
+      "speaker": "luma",
+      "voiceEnv": "ELEVENLABS_JELLYFISH_VOICE_ID",
+      "file": "luma-hello.mp3",
+      "text": "Oh! Bubble power tickles! I'm Luma. Gia and Penguin, tap my moon bells and make a song with me!",
+      "voiceSettings": { "stability": 0.5, "similarity_boost": 0.76, "style": 0.38, "speed": 1.02, "use_speaker_boost": true }
+    },
+    {
+      "id": "narrator.story-opening",
+      "speaker": "narrator",
+      "voiceEnv": "ELEVENLABS_NARRATOR_VOICE_ID",
+      "file": "narrator-story-opening.mp3",
+      "text": "Gia and Penguin's Bubble-Power Adventure. One moonlit night, Gia arrived at the aquarium with Penguin tucked safely under her arm. They heard a tiny splash at the door. Nova Kitty needed two superheroes. Gia chose bubble power. Penguin held on tight as a bright blue bubble spun around them, and the sleepy aquarium began to shimmer.",
+      "voiceSettings": { "stability": 0.58, "similarity_boost": 0.8, "style": 0.18, "speed": 0.92, "use_speaker_boost": true }
+    },
+    {
+      "id": "narrator.story-one-bubble",
+      "speaker": "narrator",
+      "voiceEnv": "ELEVENLABS_NARRATOR_VOICE_ID",
+      "file": "narrator-story-one-bubble.mp3",
+      "text": "Gia and Penguin watched one enormous moon bubble float all the way to the twinkling water.",
+      "voiceSettings": { "stability": 0.58, "similarity_boost": 0.8, "style": 0.2, "speed": 0.92, "use_speaker_boost": true }
+    },
+    {
+      "id": "narrator.story-many-bubbles",
+      "speaker": "narrator",
+      "voiceEnv": "ELEVENLABS_NARRATOR_VOICE_ID",
+      "file": "narrator-story-many-bubbles.mp3",
+      "text": "Gia used her bubble power again and again while Penguin bobbed happily beside her. Enormous moon bubbles danced toward the twinkling water.",
+      "voiceSettings": { "stability": 0.56, "similarity_boost": 0.8, "style": 0.22, "speed": 0.92, "use_speaker_boost": true }
+    },
+    {
+      "id": "narrator.story-bells",
+      "speaker": "narrator",
+      "voiceEnv": "ELEVENLABS_NARRATOR_VOICE_ID",
+      "file": "narrator-story-bells.mp3",
+      "text": "Then Gia and Penguin met Luma the moon jellyfish and made his bells glow with a sparkly song.",
+      "voiceSettings": { "stability": 0.56, "similarity_boost": 0.8, "style": 0.24, "speed": 0.92, "use_speaker_boost": true }
+    },
+    {
+      "id": "narrator.story-ending",
+      "speaker": "narrator",
+      "voiceEnv": "ELEVENLABS_NARRATOR_VOICE_ID",
+      "file": "narrator-story-ending.mp3",
+      "text": "Nova Kitty purred. The animals knew you and Penguin would find a wonderfully bubbly way to help.",
+      "voiceSettings": { "stability": 0.58, "similarity_boost": 0.8, "style": 0.2, "speed": 0.92, "use_speaker_boost": true }
+    }
+  ]
+}

@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { addBubbleEvent, buildStory } from './story';
+import {
+  addBellEvent,
+  addBubbleEvent,
+  addMeetLumaEvent,
+  buildStory,
+} from './story';
 
 describe('Moonlight Aquarium story memory', () => {
   it('remembers Gia choosing bubble power', () => {
@@ -13,6 +18,21 @@ describe('Moonlight Aquarium story memory', () => {
     });
     expect(buildStory(events).paragraphs.join(' ')).toContain(
       'Gia chose bubble power',
+    );
+    expect(buildStory(events).paragraphs.join(' ')).toContain('Penguin');
+  });
+
+  it('includes the jellyfish music Gia played with Penguin', () => {
+    const powered = addBubbleEvent([]);
+    const metLuma = addMeetLumaEvent(powered);
+    const firstNote = addBellEvent(metLuma, 'blue_bell');
+    const secondNote = addBellEvent(firstNote, 'gold_bell');
+
+    expect(buildStory(secondNote).paragraphs.join(' ')).toContain(
+      'Gia played 2 glowing notes',
+    );
+    expect(buildStory(secondNote).paragraphs.join(' ')).toContain(
+      'Penguin danced',
     );
   });
 

@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "modelId": "eleven_multilingual_v2",
+  "clips": {
+    "nova.power-invite": {
+      "speaker": "nova",
+      "src": "assets/audio/voice/nova-power-invite.mp3",
+      "text": "Gia, the aquarium needs two superheroes. Will you and Penguin choose bubble power?"
+    },
+    "nova.power-first": {
+      "speaker": "nova",
+      "src": "assets/audio/voice/nova-power-first.mp3",
+      "text": "Bubble power activated! You and Penguin are making the aquarium shimmer."
+    },
+    "nova.power-repeat": {
+      "speaker": "nova",
+      "src": "assets/audio/voice/nova-power-repeat.mp3",
+      "text": "More moon bubbles! Pop, pop, pop!"
+    },
+    "luma.hello": {
+      "speaker": "luma",
+      "src": "assets/audio/voice/luma-hello.mp3",
+      "text": "Oh! Bubble power tickles! I'm Luma. Gia and Penguin, tap my moon bells and make a song with me!"
+    },
+    "narrator.story-opening": {
+      "speaker": "narrator",
+      "src": "assets/audio/voice/narrator-story-opening.mp3",
+      "text": "Gia and Penguin's Bubble-Power Adventure. One moonlit night, Gia arrived at the aquarium with Penguin tucked safely under her arm. They heard a tiny splash at the door. Nova Kitty needed two superheroes. Gia chose bubble power. Penguin held on tight as a bright blue bubble spun around them, and the sleepy aquarium began to shimmer."
+    },
+    "narrator.story-one-bubble": {
+      "speaker": "narrator",
+      "src": "assets/audio/voice/narrator-story-one-bubble.mp3",
+      "text": "Gia and Penguin watched one enormous moon bubble float all the way to the twinkling water."
+    },
+    "narrator.story-many-bubbles": {
+      "speaker": "narrator",
+      "src": "assets/audio/voice/narrator-story-many-bubbles.mp3",
+      "text": "Gia used her bubble power again and again while Penguin bobbed happily beside her. Enormous moon bubbles danced toward the twinkling water."
+    },
+    "narrator.story-bells": {
+      "speaker": "narrator",
+      "src": "assets/audio/voice/narrator-story-bells.mp3",
+      "text": "Then Gia and Penguin met Luma the moon jellyfish and made his bells glow with a sparkly song."
+    },
+    "narrator.story-ending": {
+      "speaker": "narrator",
+      "src": "assets/audio/voice/narrator-story-ending.mp3",
+      "text": "Nova Kitty purred. The animals knew you and Penguin would find a wonderfully bubbly way to help."
+    }
+  }
+}

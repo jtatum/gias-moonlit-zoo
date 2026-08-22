@@ -2,19 +2,20 @@
 
 ## The promise
 
-Gia explores a magical animal world, makes meaningful choices, and can press **Tell My Story** whenever she wants. The game turns what she actually did—including favorite repetitions—into an illustrated, musical story about her adventure.
+Gia and her beloved stuffed best friend Penguin explore a magical animal world. Gia makes meaningful choices and can press **Tell My Story** whenever she wants. The game turns what she actually did—including favorite repetitions—into an illustrated, musical story about their adventure.
 
 This is a toy and a storybook, not a test. There are no timers, scores, failure states, streaks, advertisements, or required reading.
 
 ## Product principles
 
 1. **Gia causes the story.** The recap must mention her real choices instead of playing a generic ending.
-2. **Repetition is part of the fun.** Repeated taps receive warm variations and may become funny story details.
-3. **Predictable shape, surprising details.** Chapters keep a familiar rhythm while animals, powers, music, and reactions vary.
-4. **Facts and fantasy are clearly compatible.** Real animal facts remain true; explicitly magical events can be wonderfully impossible.
-5. **Audio is first-class.** All essential instructions are spoken and shown visually. Reading is optional.
-6. **Calm by default.** Large targets, gentle transitions, controllable sound layers, no accidental exits, and no sudden sensory escalation.
-7. **Private and offline.** Play history and generated storybooks stay on the device. The core chapter works without a connection.
+2. **Penguin is always with her.** Penguin appears in every adventure and every retelling, never as an optional unlock.
+3. **Repetition is part of the fun.** Repeated taps receive warm variations and may become funny story details.
+4. **Predictable shape, surprising details.** Chapters keep a familiar rhythm while animals, powers, music, and reactions vary.
+5. **Facts and fantasy are clearly compatible.** Real animal facts remain true; explicitly magical events can be wonderfully impossible.
+6. **Audio is first-class.** All essential instructions are spoken and shown visually. Reading is optional.
+7. **Calm by default.** Large targets, gentle transitions, controllable sound layers, no accidental exits, and no sudden sensory escalation.
+8. **Private and offline.** Play history and generated storybooks stay on the device. The core chapter works without a connection.
 
 ## First playable slice: Moonlight Aquarium
 
@@ -185,4 +186,3 @@ Deployment and verification are separate jobs so a broken build cannot replace t
 ## What comes first
 
 Create the Phase 1 app shell and implement the story event model before producing final media. Then build one aquarium interaction all the way through **choice → remembered event → Tell My Story narration → resume play**. This thin path validates the heart of the game and gives music, voice, illustration, and interaction work a stable format to build upon.
-
