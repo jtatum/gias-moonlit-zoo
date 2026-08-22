@@ -15,7 +15,9 @@ illustration, interactions, and audio direction.
 - Always enters an adventure with Gia and always appears in its retelling.
 - Clearly a well-loved plush toy. Magic may let Penguin move, react, or gain a
   temporary superpower, but the game should not replace or lose Penguin.
-- Current art is provisional until a photo of the real Penguin is available.
+- Visual identity is anchored to the real Penguin reference: tall and slightly
+  floppy, shaggy black-and-cream plush, long black fabric beak, taupe flippers,
+  small black feet, and visibly well-loved fibers.
 
 ## Nova Kitty
 
@@ -26,9 +28,16 @@ illustration, interactions, and audio direction.
 
 - Male moon jellyfish; he/him.
 - Warm, musical, bioluminescent, and delighted by repeated bell playing.
+- Speaks with a warm Australian accent; musical and natural, never caricatured.
 - His coral bow is a bow tie.
 
-## Octopus
+## Ocho
 
 - Male; he/him.
-- Personality, name, appearance, and specific superpower are still open.
+- A friendly, theatrical octopus conductor with exactly eight arms and a
+  moon-pearl baton.
+- Speaks with a friendly Boston accent: confident neighborhood warmth without
+  exaggerated spelling, catchphrases, or regional stereotypes.
+- Violet and berry-purple with turquoise bioluminescent suckers, gold star-like
+  freckles, and a coral bow tie.
+- Delights in repetition by conducting with more and more arms.

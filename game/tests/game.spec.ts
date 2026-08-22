@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('Gia can choose bubble power and hear her story', async ({ page }) => {
+test('Gia can restore the aquarium song and hear her whole story', async ({ page }) => {
   await page.goto('./');
 
   await expect(
@@ -17,7 +17,19 @@ test('Gia can choose bubble power and hear her story', async ({ page }) => {
   await page.getByRole('button', { name: 'Wake Luma the moon jellyfish' }).click();
   await page.getByRole('button', { name: 'Play the blue moon bell' }).click();
   await page.getByRole('button', { name: 'Play the gold moon bell' }).click();
-  await expect(page.getByText('You played 2 notes')).toBeVisible();
+  await page.getByRole('button', { name: 'Play the coral moon bell' }).click();
+  await expect(page.getByRole('button', { name: 'Meet Ocho!' })).toBeVisible();
+
+  await page.getByRole('button', { name: 'Meet Ocho!' }).click();
+  await expect(page.getByAltText('Ocho, a purple octopus conductor with eight arms')).toBeVisible();
+  await page.getByRole('button', { name: 'Play the blue circle moon pearl' }).click();
+  await page.getByRole('button', { name: 'Play the gold star moon pearl' }).click();
+  await page.getByRole('button', { name: 'Play the blue circle moon pearl' }).click();
+  await page.getByRole('button', { name: 'Play the coral diamond moon pearl' }).click();
+  await expect(page.getByText('All three moon pearls are home', { exact: false })).toBeVisible();
+
+  await page.getByRole('button', { name: 'Play the finale!' }).click();
+  await expect(page.getByText('That was our moonlight song', { exact: false })).toBeVisible();
 
   await page.getByRole('button', { name: 'Tell my story' }).click();
   await expect(
@@ -27,6 +39,9 @@ test('Gia can choose bubble power and hear her story', async ({ page }) => {
   ).toBeVisible();
   await expect(page.getByText('Gia chose bubble power', { exact: false })).toBeVisible();
   await expect(page.getByText('Penguin danced', { exact: false })).toBeVisible();
+  await expect(page.getByText('Ocho, an octopus with eight arms', { exact: false })).toBeVisible();
+  await expect(page.getByText('one moon pearl again', { exact: false })).toBeVisible();
+  await expect(page.getByText('whole aquarium played Gia’s moonlight song', { exact: false })).toBeVisible();
 
   await page.getByRole('button', { name: 'Back to the aquarium' }).click();
   await expect(page.getByRole('button', { name: 'Make more moon bubbles' })).toBeVisible();
@@ -38,7 +53,8 @@ test('Gia can choose bubble power and hear her story', async ({ page }) => {
     page.getByRole('heading', { name: 'Moonlight Aquarium' }),
   ).toBeVisible();
   await expect(page.getByRole('button', { name: 'Make more moon bubbles' })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Hear Luma again' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Hear Ocho the octopus' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Finale again!' })).toBeVisible();
 
   const grownUpEntry = page.getByRole('button', {
     name: 'Press and hold for grown-up settings',

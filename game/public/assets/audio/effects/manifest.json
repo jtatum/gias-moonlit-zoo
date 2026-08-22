@@ -9,6 +9,14 @@
     "luma.wakeup-sparkle": {
       "src": "assets/audio/effects/luma-wakeup-sparkle.mp3",
       "prompt": "A friendly bioluminescent moon jellyfish wakes up underwater: soft glassy twinkles, a delicate watery wobble, and a quiet delighted sparkle. Gentle, magical, and safe for a young child's game. No music, no voices, no loud impact, no scary or eerie sound."
+    },
+    "ocho.moon-pearl": {
+      "src": "assets/audio/effects/ocho-moon-pearl.mp3",
+      "prompt": "A single magical moon pearl settles into place underwater: one soft rounded glass-plink, a tiny watery shimmer, and a gentle pearly sparkle. Calm, tactile, and delightful for a young child's aquarium game. No music, no melody, no voice, no loud impact, no sharp transient."
+    },
+    "aquarium.finale-flourish": {
+      "src": "assets/audio/effects/aquarium-finale-flourish.mp3",
+      "prompt": "A cozy magical aquarium celebration texture: soft bubbles rising, warm bioluminescent shimmer, gentle pearl sparkles, and a quiet joyful whoosh. Sound design only, not music; no melody, no instruments, no voices, no applause, no loud impact or sudden transient. Safe and reassuring for a young child."
     }
   }
 }

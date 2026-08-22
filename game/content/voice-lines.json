@@ -30,10 +30,56 @@
     {
       "id": "luma.hello",
       "speaker": "luma",
+      "direction": "Warm, delighted Australian accent; musical and unhurried, never a caricature.",
       "voiceEnv": "ELEVENLABS_JELLYFISH_VOICE_ID",
       "file": "luma-hello.mp3",
       "text": "Oh! Bubble power tickles! I'm Luma. Gia and Penguin, tap my moon bells and make a song with me!",
       "voiceSettings": { "stability": 0.5, "similarity_boost": 0.76, "style": 0.38, "speed": 1.02, "use_speaker_boost": true }
+    },
+    {
+      "id": "luma.ocho-clue",
+      "speaker": "luma",
+      "direction": "Warm Australian accent; delighted discovery with a gentle musical cadence.",
+      "voiceEnv": "ELEVENLABS_JELLYFISH_VOICE_ID",
+      "file": "luma-ocho-clue.mp3",
+      "text": "You beauty! Our bells woke three moon pearls. Follow their glow to Ocho!",
+      "voiceSettings": { "stability": 0.48, "similarity_boost": 0.78, "style": 0.4, "speed": 1.0, "use_speaker_boost": true }
+    },
+    {
+      "id": "ocho.hello",
+      "speaker": "ocho",
+      "direction": "Friendly male Boston accent; confident neighborhood warmth, theatrical but never exaggerated or parodied.",
+      "voiceEnv": "ELEVENLABS_OCTOPUS_VOICE_ID",
+      "file": "ocho-hello.mp3",
+      "text": "Hey, Gia and Penguin! I'm Ocho. Tap each moon pearl and I'll conduct the aquarium song!",
+      "voiceSettings": { "stability": 0.44, "similarity_boost": 0.8, "style": 0.42, "speed": 0.98, "use_speaker_boost": true }
+    },
+    {
+      "id": "ocho.pearl-first",
+      "speaker": "ocho",
+      "direction": "Friendly male Boston accent; warmly impressed and playful.",
+      "voiceEnv": "ELEVENLABS_OCTOPUS_VOICE_ID",
+      "file": "ocho-pearl-first.mp3",
+      "text": "Beautiful moon pearl! It found its note.",
+      "voiceSettings": { "stability": 0.42, "similarity_boost": 0.8, "style": 0.46, "speed": 0.98, "use_speaker_boost": true }
+    },
+    {
+      "id": "ocho.pearl-repeat",
+      "speaker": "ocho",
+      "direction": "Friendly male Boston accent; amused and delighted by repetition.",
+      "voiceEnv": "ELEVENLABS_OCTOPUS_VOICE_ID",
+      "file": "ocho-pearl-repeat.mp3",
+      "text": "Again? Absolutely! Watch all eight arms!",
+      "voiceSettings": { "stability": 0.4, "similarity_boost": 0.8, "style": 0.5, "speed": 1.0, "use_speaker_boost": true }
+    },
+    {
+      "id": "ocho.finale",
+      "speaker": "ocho",
+      "direction": "Friendly male Boston accent; proud, joyful finale without shouting.",
+      "voiceEnv": "ELEVENLABS_OCTOPUS_VOICE_ID",
+      "file": "ocho-finale.mp3",
+      "text": "Gia and Penguin, that's our moonlight song! The whole aquarium is glowing!",
+      "voiceSettings": { "stability": 0.44, "similarity_boost": 0.8, "style": 0.48, "speed": 0.97, "use_speaker_boost": true }
     },
     {
       "id": "narrator.story-opening",
@@ -66,6 +112,54 @@
       "file": "narrator-story-bells.mp3",
       "text": "Then Gia and Penguin met Luma the moon jellyfish and made his bells glow with a sparkly song.",
       "voiceSettings": { "stability": 0.56, "similarity_boost": 0.8, "style": 0.24, "speed": 0.92, "use_speaker_boost": true }
+    },
+    {
+      "id": "narrator.story-ocho",
+      "speaker": "narrator",
+      "voiceEnv": "ELEVENLABS_NARRATOR_VOICE_ID",
+      "file": "narrator-story-ocho.mp3",
+      "text": "The glowing bells led Gia and Penguin to Ocho, an octopus with eight arms and a moon-pearl baton.",
+      "voiceSettings": { "stability": 0.56, "similarity_boost": 0.8, "style": 0.22, "speed": 0.92, "use_speaker_boost": true }
+    },
+    {
+      "id": "narrator.story-pearl-blue",
+      "speaker": "narrator",
+      "voiceEnv": "ELEVENLABS_NARRATOR_VOICE_ID",
+      "file": "narrator-story-pearl-blue.mp3",
+      "text": "Gia placed the blue circle moon pearl while Penguin kept the beat.",
+      "voiceSettings": { "stability": 0.56, "similarity_boost": 0.8, "style": 0.22, "speed": 0.92, "use_speaker_boost": true }
+    },
+    {
+      "id": "narrator.story-pearl-gold",
+      "speaker": "narrator",
+      "voiceEnv": "ELEVENLABS_NARRATOR_VOICE_ID",
+      "file": "narrator-story-pearl-gold.mp3",
+      "text": "Gia placed the gold star moon pearl while Penguin kept the beat.",
+      "voiceSettings": { "stability": 0.56, "similarity_boost": 0.8, "style": 0.22, "speed": 0.92, "use_speaker_boost": true }
+    },
+    {
+      "id": "narrator.story-pearl-coral",
+      "speaker": "narrator",
+      "voiceEnv": "ELEVENLABS_NARRATOR_VOICE_ID",
+      "file": "narrator-story-pearl-coral.mp3",
+      "text": "Gia placed the coral diamond moon pearl while Penguin kept the beat.",
+      "voiceSettings": { "stability": 0.56, "similarity_boost": 0.8, "style": 0.22, "speed": 0.92, "use_speaker_boost": true }
+    },
+    {
+      "id": "narrator.story-pearl-repeats",
+      "speaker": "narrator",
+      "voiceEnv": "ELEVENLABS_NARRATOR_VOICE_ID",
+      "file": "narrator-story-pearl-repeats.mp3",
+      "text": "Gia played the moon pearls again, and Ocho conducted with more and more arms while Penguin danced faster.",
+      "voiceSettings": { "stability": 0.55, "similarity_boost": 0.8, "style": 0.25, "speed": 0.92, "use_speaker_boost": true }
+    },
+    {
+      "id": "narrator.story-finale",
+      "speaker": "narrator",
+      "voiceEnv": "ELEVENLABS_NARRATOR_VOICE_ID",
+      "file": "narrator-story-finale.mp3",
+      "text": "Ocho lifted his baton. Luma shimmered, Nova Kitty purred, and Penguin stood proudly beside Gia as the whole aquarium played Gia's moonlight song.",
+      "voiceSettings": { "stability": 0.56, "similarity_boost": 0.8, "style": 0.26, "speed": 0.92, "use_speaker_boost": true }
     },
     {
       "id": "narrator.story-ending",

@@ -110,7 +110,19 @@ button { font: inherit; }
 .luma-button > span { position: absolute; right: -1rem; bottom: 12%; padding: .55rem .8rem; border: 2px solid white; border-radius: 1rem; background: #fff4bf; box-shadow: 0 .3rem 0 #d4a94c; font-size: clamp(.78rem, 2vw, 1rem); font-weight: 1000; white-space: nowrap; }
 .luma-button.is-awake img { filter: drop-shadow(0 0 1.5rem rgba(105, 240, 255, .7)) drop-shadow(0 1rem 1.2rem rgba(0, 20, 60, .3)); }
 .luma-button:active { transform: scale(.96); }
+.ocho-character { position: absolute; top: -1.2rem; left: 50%; z-index: 3; display: grid; width: clamp(15rem, 37vw, 24rem); place-items: center; padding: 0; border: 0; color: #2e185a; background: transparent; cursor: pointer; transform: translateX(-50%); }
+.ocho-character img { display: block; width: 100%; max-height: 25rem; object-fit: contain; filter: drop-shadow(0 1.2rem 1.3rem rgba(0, 15, 55, .42)); animation: ocho-conduct 4.2s ease-in-out infinite; }
+.ocho-character > span { position: absolute; right: 4%; bottom: 12%; padding: .5rem .85rem; border: 2px solid white; border-radius: 1rem; background: #f1dbff; box-shadow: 0 .3rem 0 #a979d4; font-weight: 1000; }
+.ocho-character:active img { transform: scale(.97); }
 .penguin-companion { position: absolute; right: clamp(6%, 24vw, 29%); bottom: 12.5rem; z-index: 4; width: clamp(5.3rem, 13vw, 8rem); filter: drop-shadow(0 .8rem .8rem rgba(0, 18, 42, .32)); transform: rotate(4deg); animation: penguin-bob 3.8s ease-in-out infinite; }
+.ocho-scene .penguin-companion { right: clamp(5%, 15vw, 18%); width: clamp(5.8rem, 12vw, 8.4rem); }
+.finale-stars { position: absolute; inset: 4% 4% 18%; z-index: 2; pointer-events: none; }
+.finale-stars span { position: absolute; color: #fff3a2; font-size: clamp(1.8rem, 5vw, 3.5rem); filter: drop-shadow(0 0 .7rem #ffe675); animation: finale-spark 2.2s ease-in-out infinite; }
+.finale-stars span:nth-child(1) { left: 9%; top: 10%; }
+.finale-stars span:nth-child(2) { right: 13%; top: 18%; animation-delay: -.4s; }
+.finale-stars span:nth-child(3) { left: 20%; bottom: 12%; animation-delay: -.8s; }
+.finale-stars span:nth-child(4) { right: 24%; bottom: 8%; animation-delay: -1.2s; }
+.finale-stars span:nth-child(5) { left: 52%; top: 2%; animation-delay: -1.6s; }
 .bubble-repeat { position: absolute; top: 1rem; right: 1rem; z-index: 6; display: grid; min-width: 4.7rem; min-height: 4.7rem; place-items: center; padding: .35rem; border: .2rem solid #c9f8ff; border-radius: 50%; color: #123260; background: rgba(113, 222, 244, .94); box-shadow: 0 .35rem 0 #277e9f, 0 .7rem 1.4rem rgba(0,0,0,.2); font-size: .72rem; font-weight: 1000; cursor: pointer; }
 .bubble-repeat span:first-child { height: 2rem; width: 2rem; border: .2rem solid white; border-radius: 50%; color: transparent; box-shadow: inset .3rem .2rem .3rem rgba(255,255,255,.8); }
 .bubble-repeat span:last-child { margin-top: -.45rem; }
@@ -138,8 +150,12 @@ button { font: inherit; }
   transform: translateX(-50%);
 }
 .speaker-icon { display: grid; min-width: 3.7rem; min-height: 3.7rem; place-items: center; border: 0; border-radius: 50%; color: #17325f; background: #d8f4ff; font-size: 1.7rem; cursor: pointer; }
+.narrator-copy { flex: 1 1 14rem; min-width: 0; }
 .speaker-name { margin: 0 0 .15rem; color: #58708b; font-size: .8rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 .narrator-line { margin: 0; font-size: clamp(1rem, 2.4vw, 1.25rem); font-weight: 800; line-height: 1.3; }
+.scene-action { flex: 0 0 auto; min-width: 7.5rem; min-height: 4rem; padding: .7rem .9rem; border: .18rem solid #fff; border-radius: 1.2rem; color: #fff; background: #76509b; box-shadow: 0 .35rem 0 #472d70; font-weight: 1000; cursor: pointer; }
+.scene-action:active { transform: translateY(.25rem); box-shadow: 0 .1rem 0 #472d70; }
+.finale-action { background: #df5878; box-shadow: 0 .35rem 0 #9e3157; }
 
 .power-button {
   position: absolute;
@@ -174,6 +190,16 @@ button { font: inherit; }
 .blue-bell { background: linear-gradient(160deg, #85f4ff, #438fdc); }
 .gold-bell { min-height: clamp(5.2rem, 13vw, 6.8rem); background: linear-gradient(160deg, #fff1a0, #e9a639); }
 .coral-bell { background: linear-gradient(160deg, #ffb1ad, #e65d88); }
+
+.pearl-board { position: absolute; left: 50%; bottom: .9rem; z-index: 7; display: flex; align-items: end; justify-content: center; gap: clamp(.65rem, 2.2vw, 1.2rem); transform: translateX(-50%); }
+.moon-pearl { position: relative; display: grid; width: clamp(4.8rem, 12vw, 6.4rem); min-height: clamp(4.8rem, 12vw, 6.4rem); place-items: center; border: .22rem solid rgba(255,255,255,.92); border-radius: 50%; color: white; box-shadow: 0 .48rem 0 rgba(20, 36, 88, .7), 0 .9rem 1.6rem rgba(0, 10, 45, .36), inset 0 .18rem .5rem rgba(255,255,255,.7); font-size: clamp(1.8rem, 5vw, 2.8rem); cursor: pointer; transition: filter .2s ease, transform .2s ease; }
+.moon-pearl::after { position: absolute; top: -.45rem; right: -.35rem; display: grid; width: 1.8rem; height: 1.8rem; place-items: center; border: .14rem solid white; border-radius: 50%; content: '♪'; opacity: 0; color: #20345e; background: #fff5a8; font-size: .9rem; font-weight: 1000; transform: scale(.4); transition: opacity .2s ease, transform .2s ease; }
+.moon-pearl.is-placed { filter: drop-shadow(0 0 1.1rem rgba(255,255,210,.75)); animation: pearl-pop 1.8s ease-in-out infinite; }
+.moon-pearl.is-placed::after { opacity: 1; transform: scale(1); }
+.moon-pearl:active { transform: translateY(.3rem) scale(.95); }
+.blue-circle { background: radial-gradient(circle at 35% 28%, #d6fcff 0 11%, #67dcf0 20%, #287fcb 74%); }
+.gold-star { background: radial-gradient(circle at 35% 28%, #fffbd0 0 10%, #ffd85e 22%, #e69c2e 76%); }
+.coral-diamond { background: radial-gradient(circle at 35% 28%, #ffe1dc 0 10%, #ff8e9d 22%, #d95084 76%); }
 
 .prototype-note { margin: -.2rem auto .15rem; color: #9ed8e0; font-size: .78rem; font-weight: 700; letter-spacing: .06em; }
 .grown-up-entry { align-self: center; margin: 0 0 max(.45rem, env(safe-area-inset-bottom)); padding: .35rem .7rem; border: 0; color: rgba(209, 242, 246, .68); background: transparent; font-size: .7rem; font-weight: 800; letter-spacing: .03em; cursor: pointer; touch-action: none; }
@@ -221,6 +247,9 @@ button:focus-visible { outline: .3rem solid #fff7a8; outline-offset: .25rem; }
 @keyframes orbit { 50% { transform: translateY(-1.5rem) scale(1.18); } }
 @keyframes pulse { 50% { opacity: .38; transform: scale(.8); } }
 @keyframes penguin-bob { 50% { transform: translateY(-.5rem) rotate(-2deg); } }
+@keyframes ocho-conduct { 50% { transform: translateY(-.6rem) rotate(1.5deg); } }
+@keyframes pearl-pop { 50% { filter: drop-shadow(0 0 1.6rem rgba(255,255,210,.95)); } }
+@keyframes finale-spark { 50% { opacity: .42; transform: scale(.72) rotate(14deg); } }
 
 @media (max-height: 640px) and (orientation: landscape) {
   .game-header { padding-top: .5rem; }
@@ -228,11 +257,14 @@ button:focus-visible { outline: .3rem solid #fff7a8; outline-offset: .25rem; }
   .hero-group { transform: scale(.72); margin-top: -6rem; }
   .hero-group.has-company { transform: translateX(10%) scale(.72); }
   .luma-button { top: 3%; width: 8rem; }
+  .ocho-character { top: -2.4rem; width: 14rem; }
   .penguin-companion { bottom: 9.5rem; width: 5.2rem; }
   .narrator-card { bottom: 6.7rem; min-height: 4.5rem; }
   .power-button { bottom: .7rem; min-height: 4.8rem; }
   .bell-board { bottom: .4rem; }
   .bell { width: 4.2rem; min-height: 4.2rem; }
+  .pearl-board { bottom: .3rem; }
+  .moon-pearl { width: 4.2rem; min-height: 4.2rem; }
   .prototype-note { display: none; }
 }
 
@@ -241,8 +273,11 @@ button:focus-visible { outline: .3rem solid #fff7a8; outline-offset: .25rem; }
   .story-button { min-width: 4.6rem; }
   .luma-button { top: 18%; left: 0; width: 7.3rem; }
   .luma-button > span { right: -.4rem; }
+  .ocho-character { top: 9%; width: 13rem; }
   .penguin-companion { right: 6%; bottom: 13.2rem; width: 5.4rem; }
+  .ocho-scene .penguin-companion { right: 3%; bottom: 13rem; width: 4.9rem; }
   .narrator-card { bottom: 8.2rem; }
+  .scene-action { min-width: 6.7rem; min-height: 3.8rem; font-size: .82rem; }
   .restart-setting { align-items: stretch; flex-direction: column; }
   .restart-setting button { width: 100%; }
 }

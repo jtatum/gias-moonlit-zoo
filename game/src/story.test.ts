@@ -2,7 +2,10 @@ import { describe, expect, it } from 'vitest';
 import {
   addBellEvent,
   addBubbleEvent,
+  addFinaleEvent,
   addMeetLumaEvent,
+  addMeetOchoEvent,
+  addPearlEvent,
   buildStory,
 } from './story';
 
@@ -46,5 +49,28 @@ describe('Moonlight Aquarium story memory', () => {
       'again and again',
     );
     expect(buildStory(threeTimes).paragraphs.join(' ')).toContain('3 enormous');
+  });
+
+  it('remembers Ocho, the moon-pearl order, repetitions, and the finale', () => {
+    let events = addBubbleEvent([]);
+    events = addMeetLumaEvent(events);
+    events = addBellEvent(events, 'blue_bell');
+    events = addBellEvent(events, 'gold_bell');
+    events = addBellEvent(events, 'coral_bell');
+    events = addMeetOchoEvent(events);
+    events = addPearlEvent(events, 'gold_star');
+    events = addPearlEvent(events, 'blue_circle');
+    events = addPearlEvent(events, 'gold_star');
+    events = addPearlEvent(events, 'coral_diamond');
+    events = addFinaleEvent(events);
+
+    const story = buildStory(events).paragraphs.join(' ');
+    expect(story).toContain('Ocho, an octopus with eight arms');
+    expect(story).toContain(
+      'gold star moon pearl, then the blue circle moon pearl, then the coral diamond moon pearl',
+    );
+    expect(story).toContain('one moon pearl again');
+    expect(story).toContain('whole aquarium played Gia’s moonlight song');
+    expect(story).toContain('Penguin stood proudly beside Gia');
   });
 });

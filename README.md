@@ -13,6 +13,11 @@ The first playable vertical slice lives in `game/`:
 - Gia can activate and repeat bubble power.
 - Penguin, Gia’s stuffed best friend, joins every scene and retelling.
 - Gia can wake Luma, a male moon jellyfish, and play three glowing bell notes.
+- Luma's song leads Gia and Penguin to Ocho, a male octopus conductor with
+  three shape-and-color moon pearls.
+- Gia's actual pearl order and repetitions become part of the narrated story.
+- The aquarium finale recombines Gia's bell and pearl notes into a moonlight song.
+- Penguin's in-game appearance is based on the real, well-loved stuffed Penguin.
 - The game remembers those actions locally.
 - **My story** retells the choices and repetitions with prerecorded narration.
 - A press-and-hold grown-up panel shows the app version and update status.

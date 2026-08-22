@@ -22,6 +22,31 @@
       "src": "assets/audio/voice/luma-hello.mp3",
       "text": "Oh! Bubble power tickles! I'm Luma. Gia and Penguin, tap my moon bells and make a song with me!"
     },
+    "luma.ocho-clue": {
+      "speaker": "luma",
+      "src": "assets/audio/voice/luma-ocho-clue.mp3",
+      "text": "You beauty! Our bells woke three moon pearls. Follow their glow to Ocho!"
+    },
+    "ocho.hello": {
+      "speaker": "ocho",
+      "src": "assets/audio/voice/ocho-hello.mp3",
+      "text": "Hey, Gia and Penguin! I'm Ocho. Tap each moon pearl and I'll conduct the aquarium song!"
+    },
+    "ocho.pearl-first": {
+      "speaker": "ocho",
+      "src": "assets/audio/voice/ocho-pearl-first.mp3",
+      "text": "Beautiful moon pearl! It found its note."
+    },
+    "ocho.pearl-repeat": {
+      "speaker": "ocho",
+      "src": "assets/audio/voice/ocho-pearl-repeat.mp3",
+      "text": "Again? Absolutely! Watch all eight arms!"
+    },
+    "ocho.finale": {
+      "speaker": "ocho",
+      "src": "assets/audio/voice/ocho-finale.mp3",
+      "text": "Gia and Penguin, that's our moonlight song! The whole aquarium is glowing!"
+    },
     "narrator.story-opening": {
       "speaker": "narrator",
       "src": "assets/audio/voice/narrator-story-opening.mp3",
@@ -41,6 +66,36 @@
       "speaker": "narrator",
       "src": "assets/audio/voice/narrator-story-bells.mp3",
       "text": "Then Gia and Penguin met Luma the moon jellyfish and made his bells glow with a sparkly song."
+    },
+    "narrator.story-ocho": {
+      "speaker": "narrator",
+      "src": "assets/audio/voice/narrator-story-ocho.mp3",
+      "text": "The glowing bells led Gia and Penguin to Ocho, an octopus with eight arms and a moon-pearl baton."
+    },
+    "narrator.story-pearl-blue": {
+      "speaker": "narrator",
+      "src": "assets/audio/voice/narrator-story-pearl-blue.mp3",
+      "text": "Gia placed the blue circle moon pearl while Penguin kept the beat."
+    },
+    "narrator.story-pearl-gold": {
+      "speaker": "narrator",
+      "src": "assets/audio/voice/narrator-story-pearl-gold.mp3",
+      "text": "Gia placed the gold star moon pearl while Penguin kept the beat."
+    },
+    "narrator.story-pearl-coral": {
+      "speaker": "narrator",
+      "src": "assets/audio/voice/narrator-story-pearl-coral.mp3",
+      "text": "Gia placed the coral diamond moon pearl while Penguin kept the beat."
+    },
+    "narrator.story-pearl-repeats": {
+      "speaker": "narrator",
+      "src": "assets/audio/voice/narrator-story-pearl-repeats.mp3",
+      "text": "Gia played the moon pearls again, and Ocho conducted with more and more arms while Penguin danced faster."
+    },
+    "narrator.story-finale": {
+      "speaker": "narrator",
+      "src": "assets/audio/voice/narrator-story-finale.mp3",
+      "text": "Ocho lifted his baton. Luma shimmered, Nova Kitty purred, and Penguin stood proudly beside Gia as the whole aquarium played Gia's moonlight song."
     },
     "narrator.story-ending": {
       "speaker": "narrator",

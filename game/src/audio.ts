@@ -3,36 +3,71 @@ export type VoiceClipId =
   | 'nova.power-first'
   | 'nova.power-repeat'
   | 'luma.hello'
+  | 'luma.ocho-clue'
+  | 'ocho.hello'
+  | 'ocho.pearl-first'
+  | 'ocho.pearl-repeat'
+  | 'ocho.finale'
   | 'narrator.story-opening'
   | 'narrator.story-one-bubble'
   | 'narrator.story-many-bubbles'
   | 'narrator.story-bells'
+  | 'narrator.story-ocho'
+  | 'narrator.story-pearl-blue'
+  | 'narrator.story-pearl-gold'
+  | 'narrator.story-pearl-coral'
+  | 'narrator.story-pearl-repeats'
+  | 'narrator.story-finale'
   | 'narrator.story-ending';
 
-export type EffectId = 'magic.bubble-shimmer' | 'luma.wakeup-sparkle';
+export type EffectId =
+  | 'magic.bubble-shimmer'
+  | 'luma.wakeup-sparkle'
+  | 'ocho.moon-pearl'
+  | 'aquarium.finale-flourish';
 export type BellTone = 'blue_bell' | 'gold_bell' | 'coral_bell';
+export type PearlTone = 'blue_circle' | 'gold_star' | 'coral_diamond';
 
 const voiceFiles: Record<VoiceClipId, string> = {
   'nova.power-invite': 'nova-power-invite.mp3',
   'nova.power-first': 'nova-power-first.mp3',
   'nova.power-repeat': 'nova-power-repeat.mp3',
   'luma.hello': 'luma-hello.mp3',
+  'luma.ocho-clue': 'luma-ocho-clue.mp3',
+  'ocho.hello': 'ocho-hello.mp3',
+  'ocho.pearl-first': 'ocho-pearl-first.mp3',
+  'ocho.pearl-repeat': 'ocho-pearl-repeat.mp3',
+  'ocho.finale': 'ocho-finale.mp3',
   'narrator.story-opening': 'narrator-story-opening.mp3',
   'narrator.story-one-bubble': 'narrator-story-one-bubble.mp3',
   'narrator.story-many-bubbles': 'narrator-story-many-bubbles.mp3',
   'narrator.story-bells': 'narrator-story-bells.mp3',
+  'narrator.story-ocho': 'narrator-story-ocho.mp3',
+  'narrator.story-pearl-blue': 'narrator-story-pearl-blue.mp3',
+  'narrator.story-pearl-gold': 'narrator-story-pearl-gold.mp3',
+  'narrator.story-pearl-coral': 'narrator-story-pearl-coral.mp3',
+  'narrator.story-pearl-repeats': 'narrator-story-pearl-repeats.mp3',
+  'narrator.story-finale': 'narrator-story-finale.mp3',
   'narrator.story-ending': 'narrator-story-ending.mp3',
 };
 
 const effectFiles: Record<EffectId, string> = {
   'magic.bubble-shimmer': 'bubble-power-shimmer.mp3',
   'luma.wakeup-sparkle': 'luma-wakeup-sparkle.mp3',
+  'ocho.moon-pearl': 'ocho-moon-pearl.mp3',
+  'aquarium.finale-flourish': 'aquarium-finale-flourish.mp3',
 };
 
 const bellFrequencies: Record<BellTone, number> = {
   blue_bell: 523.25,
   gold_bell: 659.25,
   coral_bell: 783.99,
+};
+
+const pearlFrequencies: Record<PearlTone, number> = {
+  blue_circle: 587.33,
+  gold_star: 698.46,
+  coral_diamond: 880,
 };
 
 let narrationToken = 0;
@@ -107,6 +142,33 @@ export function playEffect(effectId: EffectId) {
 }
 
 export function playBellTone(tone: BellTone) {
+  playGlassyTone(bellFrequencies[tone], 1.15);
+}
+
+export function playPearlTone(tone: PearlTone) {
+  playGlassyTone(pearlFrequencies[tone], 1.35);
+}
+
+export function playFinaleTones(
+  bells: BellTone[],
+  pearls: PearlTone[],
+) {
+  const melody = [
+    ...bells.slice(-4).map((tone) => bellFrequencies[tone]),
+    ...pearls.map((tone) => pearlFrequencies[tone]),
+  ];
+  const notes = melody.length > 0 ? melody : [523.25, 659.25, 783.99];
+
+  notes.forEach((frequency, index) => {
+    window.setTimeout(() => playGlassyTone(frequency, 1.25), index * 260);
+  });
+  window.setTimeout(
+    () => playGlassyTone(1046.5, 1.8),
+    notes.length * 260,
+  );
+}
+
+function playGlassyTone(frequency: number, duration: number) {
   audioContext ??= new AudioContext();
   const now = audioContext.currentTime;
   const fundamental = audioContext.createOscillator();
@@ -114,18 +176,18 @@ export function playBellTone(tone: BellTone) {
   const gain = audioContext.createGain();
 
   fundamental.type = 'sine';
-  fundamental.frequency.value = bellFrequencies[tone];
+  fundamental.frequency.value = frequency;
   harmonic.type = 'sine';
-  harmonic.frequency.value = bellFrequencies[tone] * 2.01;
+  harmonic.frequency.value = frequency * 2.01;
   gain.gain.setValueAtTime(0.0001, now);
   gain.gain.exponentialRampToValueAtTime(0.18, now + 0.018);
-  gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.15);
+  gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
 
   fundamental.connect(gain);
   harmonic.connect(gain);
   gain.connect(audioContext.destination);
   fundamental.start(now);
   harmonic.start(now);
-  fundamental.stop(now + 1.18);
-  harmonic.stop(now + 1.18);
+  fundamental.stop(now + duration + 0.03);
+  harmonic.stop(now + duration + 0.03);
 }
