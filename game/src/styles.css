@@ -189,6 +189,7 @@ button { font: inherit; }
 .book-actions button { min-height: 4rem; padding: .8rem 1.2rem; border: 0; border-radius: 1.3rem; font-weight: 900; cursor: pointer; }
 .hear-again { color: #174363; background: #d9f2f3; }
 .resume-button { color: white; background: #ef5f75; box-shadow: 0 .3rem 0 #b72f54; }
+.restart-button { color: #4c3470; background: #eee2ff; box-shadow: 0 .3rem 0 #c7a9e7; }
 
 .grown-up-backdrop { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 1rem; background: rgba(2, 11, 35, .78); backdrop-filter: blur(.7rem); }
 .grown-up-panel { position: relative; width: min(38rem, 100%); max-height: calc(100svh - 2rem); overflow: auto; padding: clamp(1.5rem, 5vw, 2.6rem); border: 2px solid rgba(255,255,255,.32); border-radius: 2rem; color: #17305a; background: #f7fbf6; box-shadow: 0 2rem 6rem rgba(0,0,0,.4); }
@@ -209,6 +210,10 @@ button { font: inherit; }
 .update-actions button { min-height: 3.7rem; padding: .7rem 1rem; border: 0; border-radius: 1rem; color: white; background: #276e85; font-weight: 900; cursor: pointer; }
 .update-actions button:disabled { opacity: .5; cursor: default; }
 .update-actions .install-update { background: #dd5c73; }
+.restart-setting { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.4rem; padding: 1rem; border: 2px solid #e4d8ea; border-radius: 1.2rem; background: #faf5fc; }
+.restart-setting h3 { margin: 0 0 .2rem; color: #4c3470; font-size: 1rem; }
+.restart-setting p { margin: 0; color: #6f6479; font-size: .82rem; line-height: 1.35; }
+.restart-setting button { flex: 0 0 auto; min-height: 3.7rem; padding: .7rem 1rem; border: 0; border-radius: 1rem; color: white; background: #76509b; font-weight: 900; cursor: pointer; }
 
 button:focus-visible { outline: .3rem solid #fff7a8; outline-offset: .25rem; }
 
@@ -238,6 +243,8 @@ button:focus-visible { outline: .3rem solid #fff7a8; outline-offset: .25rem; }
   .luma-button > span { right: -.4rem; }
   .penguin-companion { right: 6%; bottom: 13.2rem; width: 5.4rem; }
   .narrator-card { bottom: 8.2rem; }
+  .restart-setting { align-items: stretch; flex-direction: column; }
+  .restart-setting button { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

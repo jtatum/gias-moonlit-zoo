@@ -52,3 +52,34 @@ test('Gia can choose bubble power and hear her story', async ({ page }) => {
 
   await page.context().setOffline(false);
 });
+
+test('Gia or a grown-up can restart the current adventure', async ({ page }) => {
+  await page.goto('./');
+
+  await page.getByRole('button', { name: 'Bubble power!' }).click();
+  await expect(page.getByRole('button', { name: 'Wake Luma the moon jellyfish' })).toBeVisible();
+
+  await page.getByRole('button', { name: 'Tell my story' }).click();
+  await page.getByRole('button', { name: 'Start again' }).click();
+
+  await expect(page.getByRole('button', { name: 'Bubble power!' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Tell my story' })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Wake Luma the moon jellyfish' })).toHaveCount(0);
+
+  await page.getByRole('button', { name: 'Bubble power!' }).click();
+  const grownUpEntry = page.getByRole('button', {
+    name: 'Press and hold for grown-up settings',
+  });
+  await grownUpEntry.dispatchEvent('pointerdown');
+  await page.waitForTimeout(950);
+  await grownUpEntry.dispatchEvent('pointerup');
+
+  await page.getByRole('button', { name: 'Restart adventure' }).click();
+
+  await expect(page.getByRole('button', { name: 'Bubble power!' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Tell my story' })).toBeDisabled();
+  await expect(page.getByRole('dialog', { name: 'Game status' })).toHaveCount(0);
+  await expect.poll(
+    () => page.evaluate(() => window.localStorage.getItem('moonlight-zoo-session-v1')),
+  ).toBe('[]');
+});

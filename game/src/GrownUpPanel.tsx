@@ -7,6 +7,7 @@ type GrownUpPanelProps = {
   lastChecked: Date | null;
   onCheckForUpdate: () => void;
   onInstallUpdate: () => void;
+  onRestartAdventure: () => void;
 };
 
 export function GrownUpPanel({
@@ -16,6 +17,7 @@ export function GrownUpPanel({
   lastChecked,
   onCheckForUpdate,
   onInstallUpdate,
+  onRestartAdventure,
 }: GrownUpPanelProps) {
   return (
     <div className="grown-up-backdrop" role="presentation">
@@ -86,6 +88,19 @@ export function GrownUpPanel({
               Install new adventure
             </button>
           )}
+        </div>
+
+        <div className="restart-setting">
+          <div>
+            <h3>Play from the beginning</h3>
+            <p>
+              Clears this play-through only. The installed game and its settings
+              stay safe.
+            </p>
+          </div>
+          <button type="button" onClick={onRestartAdventure}>
+            ↻ Restart adventure
+          </button>
         </div>
       </section>
     </div>

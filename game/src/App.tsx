@@ -91,6 +91,18 @@ export default function App() {
     setStoryOpen(false);
   };
 
+  const restartAdventure = () => {
+    stopNarration();
+    window.localStorage.setItem(SESSION_KEY, '[]');
+    setEvents([]);
+    setStoryOpen(false);
+    setGrownUpOpen(false);
+    void playVoice(
+      'nova.power-invite',
+      'Gia, the aquarium needs two superheroes. Will you and Penguin choose bubble power?',
+    );
+  };
+
   const startGrownUpHold = () => {
     holdTimer.current = window.setTimeout(() => {
       setGrownUpOpen(true);
@@ -269,6 +281,13 @@ export default function App() {
               ))}
             </div>
             <div className="book-actions">
+              <button
+                type="button"
+                className="restart-button"
+                onClick={restartAdventure}
+              >
+                <span aria-hidden="true">↻</span> Start again
+              </button>
               <button type="button" className="hear-again" onClick={tellStory}>
                 <span aria-hidden="true">🔊</span> Hear it again
               </button>
@@ -288,6 +307,7 @@ export default function App() {
           lastChecked={pwaUpdate.lastChecked}
           onCheckForUpdate={pwaUpdate.checkForUpdate}
           onInstallUpdate={pwaUpdate.installUpdate}
+          onRestartAdventure={restartAdventure}
         />
       )}
     </main>
