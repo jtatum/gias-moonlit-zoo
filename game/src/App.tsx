@@ -200,6 +200,9 @@ export default function App() {
   };
 
   const startGrownUpHold = () => {
+    // A second finger landing mid-hold must not orphan the first timer:
+    // the orphan can't be cancelled and would open the panel after release.
+    cancelGrownUpHold();
     holdTimer.current = window.setTimeout(() => {
       setGrownUpOpen(true);
       holdTimer.current = null;
