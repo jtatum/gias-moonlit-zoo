@@ -99,3 +99,19 @@ test('Gia or a grown-up can restart the current adventure', async ({ page }) => 
     () => page.evaluate(() => window.localStorage.getItem('moonlight-zoo-session-v1')),
   ).toBe('[]');
 });
+
+test('two quick fingers on the grown-up button do not open the panel', async ({ page }) => {
+  await page.goto('./');
+
+  const grownUpEntry = page.getByRole('button', {
+    name: 'Press and hold for grown-up settings',
+  });
+  // Two overlapping touches, both lifted well before the hold completes.
+  await grownUpEntry.dispatchEvent('pointerdown', { pointerId: 1 });
+  await grownUpEntry.dispatchEvent('pointerdown', { pointerId: 2 });
+  await grownUpEntry.dispatchEvent('pointerup', { pointerId: 2 });
+  await grownUpEntry.dispatchEvent('pointerup', { pointerId: 1 });
+  await page.waitForTimeout(1200);
+
+  await expect(page.getByRole('dialog', { name: 'Game status' })).toHaveCount(0);
+});
